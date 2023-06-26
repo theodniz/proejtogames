@@ -1,0 +1,27 @@
+.cards {
+    width: 60%;
+    gap: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.jogos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jogos-cards{
+    width: 100vw;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 2rem 0;
+
+    flex-direction: column;
+}

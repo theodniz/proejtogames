@@ -14,11 +14,6 @@ function Card({imagemLink, titulo, descricao}){
         marginTop: '1rem'
     }
 
-    let styleBtnCard = {
-        backgroundColor: '#222',
-        color: '#ffbb33'
-    }
-
     
     return (
         <>
@@ -27,17 +22,6 @@ function Card({imagemLink, titulo, descricao}){
                 <div class="card-body">
                     <h5 class="card-title">{titulo}</h5>
                     <p class="card-text">{descricao}</p>
-                    <div>   
-                        {/*
-                            <button type="button" class="btn btn-primary" onClick={() => modalIsOpen()}>
-                                Ver Escultura
-                            </button> 
-                            */
-                        }
-                        <button type="button" class="btn" style={styleBtnCard} >
-                            Ver Escultura
-                        </button> 
-                    </div>
                 </div>
             </div>
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {RotatingLines} from 'react-loader-spinner';
 import Card from '../card/Card';
+import './data.css';
 
 function Data() {
 
@@ -11,9 +12,14 @@ function Data() {
 
     function ListGames(games){
         return (
-            games.map((game, index) => (
-            <Card imagemLink={game.thumbnail} titulo={game.title} descricao={game.short_description}/>
-          )))
+            <div className="jogos-cards">
+                <div className="row row-cols-1 row-cols-md-3 g-4 cards">
+                    {games.map((game, index) => (
+                        <Card imagemLink={game.thumbnail} titulo={game.title} descricao={game.short_description}/>
+                    ))}
+                </div>
+            </div>
+            )
     }
 
     function queryGames(e){
@@ -67,22 +73,25 @@ function Data() {
     }, [])
 
   return (
-    <div>
-    <h1>{error}</h1>
-    <input type="text" onChange={queryGames} placeholder="Buscar jogo"/>
+    <div className="jogos">
+        <h1>Jogos</h1>
 
-    {error ? (<p>{error}</p>) :
-        gamesView.length > 0 ?
-        (ListGames(gamesView)) :
-        (<RotatingLines
-            strokeColor="grey"
-            strokeWidth="5"
-            animationDuration="0.75"
-            width="96"
-            visible={true}
-            />)
+        <div>
+            <input type="text" class="form-control" placeholder="Buscar Jogo" aria-label="Username" aria-describedby="basic-addon1" onChange={queryGames}/>
+        </div>
 
-    }
+        {error ? (<p>{error}</p>) :
+            gamesView.length > 0 ?
+            (ListGames(gamesView)) :
+            (<RotatingLines
+                strokeColor="grey"
+                strokeWidth="5"
+                animationDuration="0.75"
+                width="96"
+                visible={true}
+                />)
+
+        }
     
   </div>
   );
